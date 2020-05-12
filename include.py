@@ -19,6 +19,7 @@ FSEG_PAGE_DATA = FIL_PAGE_DATA
 TRX_UNDO_PAGE_HDR = FSEG_PAGE_DATA
 
 PAGE_LEVEL = 26	#level of the node in an index tree; the leaf level is the level 0 */
+PAGE_INDEX_ID = 28 #Index ID
 				
 innodb_page_type={
 	'0000':u'Freshly Allocated Page',
@@ -33,7 +34,9 @@ innodb_page_type={
 	'000a':u'Uncompressed BLOB Page',
 	'000b':u'1st compressed BLOB Page',
 	'000c':u'Subsequent compressed BLOB Page',
-	'45bf':u'B-tree Node'
+	'45bf':u'B-tree Node',
+	'45be':u'R-tree Node',
+        '45bd':u'Tablespace SDI Index page', #MySQL8.0 Serialized Dictionary Information Page
 	}
 	
 innodb_page_direction={
